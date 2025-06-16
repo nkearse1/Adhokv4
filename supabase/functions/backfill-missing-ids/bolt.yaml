@@ -1,0 +1,6 @@
+hooks:
+  post_deploy:
+    - name: Run Supabase Cleanup
+      command: |
+        curl -X POST https://hrihtezoqtmarelhbyvk.functions.supabase.co/backfill-missing-ids \
+          -H "Authorization: Bearer <your-service-role-key>"
